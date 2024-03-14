@@ -41,8 +41,12 @@ console.log(a);  //undefined because var a is hoisted to the top with var a = un
     console.log(a);//var a is now initialised with value 2 and not 5 because let a=5 is available only within that scope and not outside and var is hoisted to top  
 }
 console.log(a);
-
 "###############################################################################################################################################################"
 
+let variable = 1;
+{
+    console.log("Variable" , variable++); //prints 1 with no error
+}
 
-
+//Difference between eg in line 1 to eg in line 47 when we see both eg , we feel both are same but eg 1 throws error whereas eg 47 don't because in eg 47 "The block does not declare a new variable named variable, so it accesses the variable from the outer scope.
+//but in eg "JA1" "Inside the block, let x = 20; declares a new variable named x within the block scope. This declaration shadows the outer x variable within the block" since within the scope console.log(x) is written first after that "x" is declared , in js declaration is hoisted to top (in let and const only declaration is hoisted but not intialised with undefined) therefore we get ReferenceError: Cannot access 'x' before initialization
